@@ -3,111 +3,104 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FAQ-accordion</title>
+    <title>FAQs</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            fontFamily: { 
-                Wsans : ["Work Sans", "Arial"]
-            },
 
-            colors: {
-                darkppl:"#301534",
-                pink: "#AD28EB",
-                lightpink: "#F8EEFF",
-                paleppl: "#8B6990",
-                white: "#FFFFFF",
+    <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+          theme: {
+            extend: {
+              fontFamily: { 
+                    work: ["Work Sans", "sans-serif"], 
+                },
+              colors: { 
+                pink:"#F8EEFF",
+                magenta: "#c026d3",
+                purple:"#CCBDCE",
+
+              },
             },
           },
-        },
-      };
-    </script>
-    <style>
-      .accordio-description {
-          max-height: 0;
-          overflow: hidden;
-          
-      }
-      
-    </style>
+        };
+  </script>
+ 
+  <style>
+    p{
+      display: none;
+    }
+    .plusClick{
+      display: block;
+    }
+    .minusClick{
+      display: none;
+    }
+  </style>
 
 </head>
-<body class="bg-lightpink font-Wsans">
-    <header class="bg-[url(https://i.postimg.cc/gJdpGSqY/background.png)] lg:bg-cover bg-no-repeat bg-center h-[232px] lg:h-[320px] "></header>
-    <main class="flex justify-center relative top-[-142.5px] pb-[10%] lg:top-[-167.5px]">
-      <div class="w-[327px] h-[527px] lg:w-[650px] lg:h-[650px] bg-white rounded-lg ">
-          <div class="flex items-center gap-6 p-6 ">
-              <img src="https://i.postimg.cc/nLhKNZNZ/ph-star-four-fill.png" alt="star" class="w-6 lg:w-10">
-              <h1 class="font-bold text-3xl lg:text-6xl">FAQs</h1>
+<body class="bg-pink font-work"> 
+    <!-- <img src="FAQsimages/background.png" alt="backgorund_image"> -->
+    <header class="bg-[url('FAQsimages/background.png')] lg:bg-cover bg-no-repeat bg-center h-[232px] lg:h-[320px] "></header>
+
+
+    <main class="mt-[5%] bg-white p-4 drop-shadow  relative top-[-70px] lg:top-[-190px] rounded-lg w-[75%] mx-auto lg:w-[40%] lg:p-7 ">
+
+        <div class="flex flex-row items-center gap-3 mb-6">
+          <div>
+            <img src="faqsimages/Vector.png" class="w-4 lg:w-8" alt="">
           </div>
+            <h1 class="font-work font-bold text-3xl lg:text-5xl ">FAQs</h1>
+        </div>
+        <div class="accordion-btn cursor-pointer flex flex-row justify-between hover:text-magenta items-center gap-3 mb-5">
+            <h2 class="text-[11px] font-semibold   lg:text-[16px] ">What is Frontend Mentor, and how will it help me?</h2>
+            
+              <button id="plusClick" class="plusClick rounded-full bg-magenta px-[7px] text-white text-[15px]">+</button>
+              <button id="minusClick"  class="minusClick rounded-full bg-black px-[7px] text-white text-[15px] ">-</button>
+            
+        </div>
+        <div class="accordio-description">
+          <p id="paragraph" class=" mb-5 text-[11px] text-purple lg:text-[14px]">Frontend Mentor offers realistic coding challenges to help developers improve their frontend coding skills with projects in HTML, CSS, and JavaScript. It’s suitable for all levels and ideal for portfolio building.</p>
+        </div>
+        <div class="border border-pink w-full mb-5"></div>
+        <div class="accordion-btn cursor-pointer flex flex-row justify-between hover:text-magenta items-center gap-3 mb-5">
+            <h3 class="text-[11px] font-semibold   lg:text-[16px]">Is Frontend Mentor free?</h3>
+            <div class="flex flex-col">
+              <button id="plusClick" class="plusClick rounded-full bg-magenta px-[7px] text-white text-[15px]">+</button>
+              <button id="minusClick"  class="minusClick rounded-full bg-black px-[7px] text-white text-[15px] ">-</button>
+            </div>
+        </div>
+        <div class="accordio-description">
+          <p id="paragraph" class=" mb-5 text-[11px] text-purple lg:text-[14px]">Frontend Mentor offers realistic coding challenges to help developers improve their frontend coding skills with projects in HTML, CSS, and JavaScript. It’s suitable for all levels and ideal for portfolio building.</p>
+        </div>
 
-          <div class="accordion-item mt-6 lg:mt-8 px-6 lg:mx-12">
-              <button class="accordion-btn flex gap-6  my-5 lg:my-7">
-                <p class="font-semibold text-4 text-left lg:text-[18px] w-[224px] lg:w-[449px]">What is Frontend Mentor, and how will it help me?</p>
-                <div class="icon">
-                  <img class="minus-icon w-[30px] h-[30px]" src="https://i.postimg.cc/63LBJLCk/moin.png" alt="moin">
-                  <img class="plus-icon w-[30px] h-[30px]" src="https://i.postimg.cc/Jnbz7WCd/plus-1.png" alt="plus">
-                </div>
-              </button>
-              <div class="accordio-description ">
-                <p class="text-paleppl text-[14px] lg:text-paleppl lg:text-[18px]">Frontend Mentor offers realistic coding challenges to help developers improve their 
-                  frontend coding skills with projects in HTML, CSS, and JavaScript. It's suitable for 
-                  all levels and ideal for portfolio building.</p>
-              </div>
-            </div>
-            <div class="border-b-2 border-lightpink w-full"></div>
-            <div class="accordion-item mt-6 lg:mt-8 px-6 lg:mx-12">
-              <button class="accordion-btn flex gap-6  my-5 lg:my-7">
-                <p class="font-semibold text-4 text-left lg:text-[18px] w-[224px] lg:w-[449px] ">Is Frontend Mentor free?</p>
-                <div class="icon">
-                  <img class="minus-icon w-[30px] h-[30px]" src="https://i.postimg.cc/63LBJLCk/moin.png" alt="moin">
-                  <img class="plus-icon w-[30px] h-[30px]" src="https://i.postimg.cc/Jnbz7WCd/plus-1.png" alt="plus">
-                </div>
-              </button>
-              <div class="accordio-description ">
-                <p class="text-paleppl text-[14px] lg:text-paleppl lg:text-[18px]">Frontend Mentor offers realistic coding challenges to help developers improve their 
-                  frontend coding skills with projects in HTML, CSS, and JavaScript. It's suitable for 
-                  all levels and ideal for portfolio building.</p>
-              </div>
-            </div>
-            <div class="border-b-2 border-lightpink w-full"></div>
-            <div class="accordion-item mt-6 lg:mt-8 px-6 lg:mx-12">
-              <button class="accordion-btn flex gap-6  my-5 lg:my-7 ">
-                <p class="font-semibold text-left text-4 lg:text-[18px] w-[224px] lg:w-[449px]">Can I use Frontend Mentor projects in my portfolio?</p>
-                <div class="icon">
-                  <img class="minus-icon w-[30px] h-[30px]" src="https://i.postimg.cc/63LBJLCk/moin.png" alt="moin">
-                  <img class="plus-icon w-[30px] h-[30px]" src="https://i.postimg.cc/Jnbz7WCd/plus-1.png" alt="plus">
-                </div>
-              </button>
-              <div class="accordio-description ">
-                <p class="text-paleppl text-[14px] lg:text-paleppl lg:text-[18px]">Frontend Mentor offers realistic coding challenges to help developers improve their 
-                  frontend coding skills with projects in HTML, CSS, and JavaScript. It's suitable for 
-                  all levels and ideal for portfolio building.</p>
-              </div>
-            </div>
-            <div class="border-b-2 border-lightpink w-full"></div>
+        <div class="border border-pink w-full mb-5"></div>
 
-            <div class="accordion-item mt-6 lg:mt-8 px-6 lg:mx-12">
-              <button class="accordion-btn flex gap-6  my-5 lg:my-7">
-                <p class="font-semibold text-4 text-left lg:text-[18px] w-[224px] lg:w-[450px]">How can I get help if I'm stuck on a challenge?</p>
-                <div class="icon">
-                  <img class="minus-icon w-[30px] h-[30px]" src="https://i.postimg.cc/63LBJLCk/moin.png" alt="moin">
-                  <img class="plus-icon w-[30px] h-[30px]" src="https://i.postimg.cc/Jnbz7WCd/plus-1.png" alt="plus">
-                </div>
-              </button>
-              <div class="accordio-description ">
-                <p class="text-paleppl text-[14px] lg:text-paleppl lg:text-[18px]">Frontend Mentor offers realistic coding challenges to help developers improve their 
-                  frontend coding skills with projects in HTML, CSS, and JavaScript. It's suitable for 
-                  all levels and ideal for portfolio building.</p>
-              </div>
+        <div class="accordion-btn cursor-pointer flex flex-row justify-between hover:text-magenta items-center gap-3 mb-5">
+            <h3 class="text-[11px] font-semibold   lg:text-[16px]">Can I use Frontend Mentor projects in my portfolio?</h3>
+            <div class="flex flex-col">
+              <button id="plusClick" class="plusClick rounded-full bg-magenta px-[7px] text-white text-[15px]">+</button>
+              <button id="minusClick"  class="minusClick rounded-full bg-black px-[7px] text-white text-[15px] ">-</button>            </div>
             </div>
-      </div>
-  </main>
-    <script src="./script.js"></script>
+        </div>
+        <div class="accordio-description">
+          <p id="paragraph" class=" mb-5 text-[11px] text-purple lg:text-[14px]">Frontend Mentor offers realistic coding challenges to help developers improve their frontend coding skills with projects in HTML, CSS, and JavaScript. It’s suitable for all levels and ideal for portfolio building.</p>
+        </div>
+
+        <div class="border border-pink w-full mb-5"></div>
+        <div class="accordion-btn cursor-pointer flex flex-row justify-between hover:text-magenta items-center gap-3 mb-5">
+            <h3 class="text-[11px] font-semibold   text-lightgrey lg:text-[16px]">How can I get help if I'm stuck on a challenge?</h3>
+            <div class="flex flex-col">
+              <button id="plusClick" class="plusClick rounded-full bg-magenta px-[7px] text-white text-[15px]">+</button>
+              <button id="minusClick"  class="minusClick rounded-full bg-black px-[7px] text-white text-[15px] ">-</button>            </div>
+            </div>
+        </div>
+        <div class="accordio-description">
+          <p id="paragraph" class=" mb-5 text-[11px] text-purple lg:text-[14px]">Frontend Mentor offers realistic coding challenges to help developers improve their frontend coding skills with projects in HTML, CSS, and JavaScript. It’s suitable for all levels and ideal for portfolio building.</p>
+        </div>
+      </main>
+    <script src="script.js"></script>
+    
 </body>
 </html>
