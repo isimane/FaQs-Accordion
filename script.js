@@ -1,27 +1,24 @@
-const accordionBtn = document.querySelectorAll(".accordion-btn");
-
-for (let i = 0; i < accordionBtn.length; i++) {
-    const item = accordionBtn[i];
-    item.addEventListener("click", function() {
-        this.classList.toggle("active")
-        const itemDescription = this.nextElementSibling;
-        const plusIcon = this.querySelector(".plus-icon")
-        const minusIcon = this.querySelector(".minus-icon")
-        const colorch = this.querySelector(".accordio-description");
-        
-
-        if(itemDescription.style.maxHeight){
-            itemDescription.style.maxHeight = null;
-            plusIcon.style.display = "block";
-            minusIcon.style.display = "none";
-            this.querySelector(".accordion-btn p").style.color = "black";
-            
+const content = document.getElementsByTagName("p");
+const plusButton = document.querySelectorAll(".plusClick");
+const minusButton = document.querySelectorAll(".minusClick");
+const section = document.querySelectorAll('.accordion-btn');
+console.log(section[0].children);   // console.log(content.length);
+// console.log(plusButton.length); 
+// console.log(minusButton.length);
+section.forEach((element, index) => {
+    element.addEventListener("click",() =>{
+        console.log(typeof content[index].style.display);
+        console.log(content[index].style.display);
+        if(content[index].style.display === 'none' || content[index].style.display === "" ){
+            content[index].style.display = 'block';
+            minusButton[index].style.display = 'block';
+            plusButton[index].style.display = 'none';
         }else{
-            itemDescription.style.maxHeight = itemDescription.scrollHeight + "px";
-            plusIcon.style.display = "none";
-            minusIcon.style.display = "block";
-            this.querySelector(".accordion-btn p").style.color = "none";
-            
+            content[index].style.display = 'none';
+            minusButton[index].style.display = 'none';
+            plusButton[index].style.display = 'block';
         }
-    })
-}
+    });
+
+        
+});
